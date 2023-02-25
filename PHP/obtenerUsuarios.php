@@ -10,8 +10,7 @@
   $registros = mysqli_query($conexion, "SELECT * FROM usuarios");
   
   // RECORRE EL RESULTADO Y LO GUARDA EN UN ARRAY
-  while ($resultado = mysqli_fetch_array($registros))  
-  {
+  while ($resultado = mysqli_fetch_array($registros)){
     $datos[] = $resultado;
   }
   
