@@ -1,0 +1,32 @@
+<div class="container">
+  <h1>Iniciar sesion</h1>
+
+  <!-- <pre>{{ Formulario.value | json }} </pre> -->
+  <form action="" class="" #Formulario="ngForm" (ngSubmit)="login(Formulario)">
+    <div class="form-group col-md-3">
+      <label for="">Correo Electronico</label>
+      <input
+        type="email"
+        name="email"
+        placeholder="Email"
+        class="form-control"
+        [(ngModel)]="loginForm.email"
+        required=""
+      />
+    </div>
+
+    <div class="form-group col-md-3">
+      <label for="">Contraseña</label>
+      <input
+        type="password"
+        name="password"
+        placeholder="Contaseña"
+        class="form-control"
+        [(ngModel)]="loginForm.password"
+        required
+      />
+    </div>
+
+    <input class="btn btn-primary" type="submit" value="Login" />
+  </form>
+</div>
