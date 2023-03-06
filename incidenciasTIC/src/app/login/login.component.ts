@@ -1,5 +1,9 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { UsuariosServiceService } from '../services/usuarios-service.service';
+import { Usuario } from '../models/Usuario';
+
+
 
 @Component({
   selector: 'app-login',
@@ -8,6 +12,11 @@ import { NgForm } from '@angular/forms';
 })
 export class LoginComponent {
 
+  constructor(private usuariosServicio: UsuariosServiceService) {
+    this.obtenerUsuarios();
+   }
+
+
 
   //objeto con los atributos que son los campos del formulario 
   loginForm={
@@ -15,6 +24,10 @@ export class LoginComponent {
   password:""
   }
 
+  //Variable para guadar lo que me traigo de la bbdd
+
+  usuarios:any=[];
+  
 
   //recoger los campos que vienen del formulario
 
@@ -32,6 +45,14 @@ export class LoginComponent {
     console.log(form.value)
     console.log(email)
 
+  }
+
+ 
+
+  obtenerUsuarios() {
+    this.usuariosServicio.obtenerUsuarios().subscribe(
+      result => this.usuarios = result
+    );
   }
 
 }
