@@ -1,4 +1,12 @@
+//
+//
+// INCIDENCIAS DE CADA USUARIO
+
+
+
 import { Component } from '@angular/core';
+import { IncidenciasServiceService } from '../services/incidencias-service.service';
+
 
 @Component({
   selector: 'app-ver-incidencias',
@@ -6,5 +14,22 @@ import { Component } from '@angular/core';
   styleUrls: ['./ver-incidencias.component.css']
 })
 export class VerIncidenciasComponent {
+
+  constructor(private incidenciasService: IncidenciasServiceService) {
+    this.obtenerIncidenciasUsu();
+   }
+
+  codUsu:number=0; //esta variable la tenemos que recuperar del opbjeto usuario al logearnos
+  incidencias:any={};
+
+
+  obtenerIncidenciasUsu() {
+    this.incidenciasService.obtenerIncidenciasUsu(this.codUsu).subscribe(
+      result => this.incidencias = result
+    );
+  }
+
+
+
 
 }
