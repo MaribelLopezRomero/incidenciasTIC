@@ -14,7 +14,7 @@ $json = file_get_contents('php://input');
  
 $params = json_decode($json);
   // REALIZA LA QUERY A LA DB
-  $registros = mysqli_query($conexion, "SELECT * FROM usuarios where email=".$params->email." and password=".$params->password);  //revisar comillas
+  $registros = mysqli_query($conexion, "SELECT * FROM incidencias");  //revisar comillas
   
   // RECORRE EL RESULTADO Y LO GUARDA EN UN ARRAY
   while ($resultado = mysqli_fetch_array($registros)){

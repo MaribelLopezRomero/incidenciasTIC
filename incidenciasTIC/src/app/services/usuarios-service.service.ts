@@ -7,12 +7,14 @@ import { Injectable } from '@angular/core';
 export class UsuariosServiceService {
 
 
-  URL = "/PHP/";
+  URL = "http://localhost/PHP/";
 
   constructor(private http: HttpClient) { }
 
-  obtenerUsuarios() {
-    return this.http.get(`${this.URL}ObtenerUsuarios.php`);
+  obtenerUsuarios(usuario: {
+      email: null; password: null; //   return this.http.get(`${this.URL}BajaUsuario.php?idUsuario=${idUsuario}`);
+    }) {
+    return this.http.post(`${this.URL}obtenerUsuarios.php `, JSON.stringify(usuario) );
   }
 
   // altaUsuario(usuario) {

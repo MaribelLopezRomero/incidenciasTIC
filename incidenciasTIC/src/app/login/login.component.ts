@@ -1,7 +1,8 @@
+
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { UsuariosServiceService } from '../services/usuarios-service.service';
-import { Usuario } from '../models/Usuario';
+
 
 
 
@@ -16,9 +17,17 @@ export class LoginComponent {
     this.obtenerUsuarios();
    }
 
+   //Objeto usuario para pasarlo como parametros a la base de datps
+
+   usuario={
+    email:null,
+    password:null
+   };
 
 
-  //objeto con los atributos que son los campos del formulario 
+
+
+  //objeto con los atributos que son los campos del formulario
   loginForm={
   email:"",
   password:""
@@ -27,7 +36,7 @@ export class LoginComponent {
   //Variable para guadar lo que me traigo de la bbdd
 
   usuarios:any=[];
-  
+
 
   //recoger los campos que vienen del formulario
 
@@ -42,15 +51,17 @@ export class LoginComponent {
     const email=form.value.email;
     const password=form.value.password;
 
-    console.log(form.value)
-    console.log(email)
+    this.usuario.email = email;
+    this.usuario.password=password;
+
+    console.log(this.usuario);
 
   }
 
- 
+
 
   obtenerUsuarios() {
-    this.usuariosServicio.obtenerUsuarios().subscribe(
+    this.usuariosServicio.obtenerUsuarios(this.usuario).subscribe(
       result => this.usuarios = result
     );
   }

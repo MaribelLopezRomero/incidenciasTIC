@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Actualizar incidencia</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body>
+    <div class="container p-5 my-3 bg-dark text-white">
+      <h2>Incidencias TIC</h2>
+    </div>
+    <div class="container mt-3">
+      <h2>Incidencias Ind1234569</h2>           <!--RECOGER EL CODIGO DE LA INCIDENCIA DE LA BBDD-->
+      <form action="./gestionarIncidencia.html" method="post">
+        <div class="mb-3 d-flex selectores">
+          <div class="p-1">Estado:</div>
+          <div>
+            <select class="form-select" name="estado" id="estado" style="width: 200px">
+              <option value=""></option>
+              <option value="comercio">Termianda</option>
+              <option value="informatica">En gestion</option>
+            </select>
+          </div>
+        </div>
+        <!--Feedback-->
+        <div class="mb-3 mt-3">
+          <label for="comentario" class="form-label"
+            >Feedback:</label
+          >
+          <textarea
+            name="text"
+            id="feedback"
+            class="form-control"
+            rows="8"
+            cols="50"
+          ></textarea>
+        </div>
+
+        <div class="mb-3 mt-3 d-flex justify-content-center">
+            <input type="submit" id="buttonStatus" value="Enviar" class="btn btn-outline-secondary"/>
+            <input value="Cancelar" id="buttonStatus" class="btn btn-outline-danger"/>
+          </div>
+
+      </form>
+    </div>
+  </body>
+</html>

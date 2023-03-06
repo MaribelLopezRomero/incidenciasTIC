@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+
+  <body>
+    <div class="container p-5 my-3 bg-dark text-white">
+      <h2>Gestionar Incidencias TIC</h2>
+    </div>
+    <div class="container pt-2">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Fecha creación</th>
+            <th>Código incidencia</th>
+            <th>Tipo</th>
+            <th>Aula</th>
+            <th>Estado</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>xx/xx/xxxx</td>
+            <td>Ind1234569</td>
+            <td>Hardware</td>
+            <td>2ª DAW</td>
+            <td>
+              <button type="button" id="buttonStatus" name="button" class="btn btn-success" > Terminada</button>
+            </td>
+            <td>
+              <a href="./incidencia.html">
+                <button type="button" id="buttonStatus" name="button" class="btn btn-secondary disabled"> Gestionar</button ><!--SI EL ESTADO ES COMPLETADA QUITA EL BOTON DE GESTIONAR-->
+              </a>
+            </td>
+          </tr>
+          <tr></tr>
+          <tr>
+            <td>xx/xx/xxxx</td>
+            <td>Ind1234569</td>
+            <td>Hardware</td>
+            <td>2ª DAW</td>
+            <td>
+              <button type="button" id="buttonStatus" name="button" class="btn btn-danger" > Creada </button>
+            </td>
+            <td>
+              <a href="./incidencia.html">
+                <button
+                  type="button"
+                  id="buttonStatus"
+                  name="button"
+                  class="btn btn-secondary"
+                >
+                  Gestionar
+                </button>
+              </a>
+            </td>
+          </tr>
+          <tr></tr>
+          <tr>
+            <td>xx/xx/xxxx</td>
+            <td>Ind1234569</td>
+            <td>Hardware</td>
+            <td>2ª DAW</td>
+            <td>
+              <button
+                type="button"
+                id="buttonStatus"
+                name="button"
+                class="btn btn-warning"
+              >
+                En proceso
+              </button>
+            </td>
+            <td>
+              <a href="./incidencia.html">
+                <button
+                  type="button"
+                  id="buttonStatus"
+                  name="button"
+                  class="btn btn-secondary"
+                >
+                  Gestionar
+                </button>
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>

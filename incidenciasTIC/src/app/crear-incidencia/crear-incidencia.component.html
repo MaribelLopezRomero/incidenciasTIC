@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Crear incidencia</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body>
+    <div class="container p-5 my-3 bg-dark text-white">
+      <h2>Incidencias TIC</h2>
+      <ul class="nav">
+        <li class="nav-item">
+          <a
+            href="./crearIncidencia.html"
+            target="_black"
+            class="nav-link text-white disabled"
+            >Crear nueva incidencia</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            href="./verIncidencia.html"
+            target="_black"
+            class="nav-link text-white"
+            >Ver incidencias</a
+          >
+        </li>
+      </ul>
+    </div>
+    <div class="container mt-3">
+      <h2>Datos de usuario</h2>
+      <!--nombre/apellidos/email/contraseña/departamento-->
+      <form action="./crearIncidencia.html" method="post">
+        <div class="mb-3 d-flex selectores">
+          <div class="p-1">Tipo:</div>
+          <!--CARGAR CON LA BBDD  TODAS LOS TIPO-->
+          <div>
+            <select
+              class="form-select"
+              name="tipo"
+              id="tipo"
+              style="width: 200px"
+            >
+              <option value=""></option>
+              <option value="comercio">Hardware</option>
+              <option value="informatica">Software</option>
+            </select>
+          </div>
+          <div class="p-1">Departamento:</div>
+          <!--CARGAR CON LA BBDD  TODAS LOS DEPARTAMENTOS-->
+          <div>
+            <select
+              class="form-select"
+              name="departamento"
+              id="departamento"
+              style="width: 200px"
+            >
+              <option value=""></option>
+              <option value="comercio">Comercio</option>
+              <option value="informatica">Informática</option>
+              <option value="administracion">Administración y gestion</option>
+              <option value="orientacion">Orientacion</option>
+            </select>
+          </div>
+          <div class="p-1">Aula-Grupo:</div>
+          <!--CARGAR CON LA BBDD  TODAS LAS AULAS-->
+          <div>
+            <select
+              class="form-select"
+              name="grupo"
+              id="grupo"
+              style="width: 200px"
+            >
+              <option value=""></option>
+              <option value="1isa">1º IS A</option>
+              <option value="2com">2ª COM</option>
+              <option value="2daw">2ª DAW</option>
+              <option value="1jar">1ª JAR</option>
+            </select>
+          </div>
+          <div>
+            Fecha:
+            <!--FECHA CARGAR AUTOMATICA DESDE LOCAL-->
+            <input type="date" />
+          </div>
+        </div>
+        <!--comentarios-->
+        <div class="mb-3 mt-3">
+          <label for="comentario" class="form-label"
+            >Escribe la incidencia:</label
+          >
+          <textarea
+            name="text"
+            id="comentario"
+            class="form-control"
+            rows="8"
+            cols="50"
+          ></textarea>
+        </div>
+
+        <div class="mb-3 mt-3">
+          <input
+            type="submit"
+            value="Enviar"
+            class="btn btn-outline-secondary"
+          />
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
