@@ -6,8 +6,8 @@ import { Injectable } from '@angular/core';
 })
 export class UsuariosServiceService {
 
-  
-  URL = "http://localhost/PHP/";
+
+  URL = "/PHP/";
 
   constructor(private http: HttpClient) { }
 

@@ -1,6 +1,8 @@
 <?php 
-  header('Access-Control-Allow-Origin: *'); 
-  header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
+header('Access-Control-Allow-Origin: *');
+header('Access-Control-Allow-Headers: X-Requested-With');
+header('Access-Control-Allow-Methods: POST, GET, OPTIONS');
+header('Content-Type: application/json');
   
   require("conexion.php"); // IMPORTA EL ARCHIVO CON LA CONEXION A LA DB
 
@@ -19,3 +21,4 @@
   echo $json; // MUESTRA EL JSON GENERADO
   
   header('Content-Type: application/json');
+?>
