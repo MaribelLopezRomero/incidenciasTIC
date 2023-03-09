@@ -14,7 +14,7 @@ import { UsuariosServiceService } from '../services/usuarios-service.service';
 export class LoginComponent {
 
   constructor(private usuariosServicio: UsuariosServiceService) {
-    this.obtenerUsuarios();
+    // this.obtenerUsuarios();
    }
 
    //Objeto usuario para pasarlo como parametros a la base de datps
@@ -69,13 +69,7 @@ export class LoginComponent {
 
     console.log("dsfgdfg")
 
-    //ARRAY PROVISIONAL QUE SIMULA DATOS DE LA BBDD
 
-    // this.usuarios[0]={
-    //   nombre:"maribel",
-    //   codUsu:1,
-    // }
-    // console.log("entra a obtener usuarios")
   }
 
 

@@ -36,10 +36,16 @@
             <th>Código incidencia</th>
             <th>Tipo</th>
             <th>Aula</th>
+            <th>Grupo</th>
+            <th>Descripcion</th>
             <th>Estado</th>
           </tr>
         </thead>
         <tbody>
+
+
+
+
           <tr *ngFor="let incidencia of incidencias; let i = index">
             <td>
               {{ incidencia.fecha }}
@@ -56,22 +62,30 @@
             <td>
               {{ incidencia.aula }}
             </td>
+            <td>
+              {{ incidencia.grupo }}
+            </td>
+
+              <td>
+              {{ incidencia.descripcion }}
+            </td>
 
             <td>
 
-              <button type="button" id="buttonStatus" name="button"[ngClass]="incidencia.estad=== 'creado' ? 'btn btn-success' : incidencia.estad === 'en proceso' ? 'btn btn-warning' : 'btn btn-danger'">
+              <button type="button" id="buttonStatus" name="button"[ngClass]="incidencia.estado=== 'Creada' ? 'btn btn-success' : incidencia.estado === 'En Proceso' ? 'btn btn-warning' : 'btn btn-danger'">
 
-                {{ incidencia.estad }}
-             
+                {{ incidencia.estado}}
+
               </button>
 
-           
-            
+
+
             </td>
           </tr>
 
         </tbody>
       </table>
+
     </div>
   </body>
 </html>

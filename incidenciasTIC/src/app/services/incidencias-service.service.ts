@@ -7,7 +7,8 @@ import { Injectable } from '@angular/core';
 export class IncidenciasServiceService {
 
 
-  URL = "http://localhost/PHP/";
+  URL = "http://localhost/IncidenciasTic/PHP/";
+
 
   constructor(private http: HttpClient) { }
 
@@ -17,7 +18,7 @@ export class IncidenciasServiceService {
   }
 
   // metodo para sacar todas las incidencias del usuario - USUARIO
-  obtenerIncidenciasUsu(codUsu: number) {
+  obtenerIncidenciasUsus(codUsu: number) {
     return this.http.post(`${this.URL}listarIncidenciasUsuario.php `, codUsu);
   }
 

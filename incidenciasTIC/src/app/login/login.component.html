@@ -2,7 +2,7 @@
   <h1>Iniciar sesion</h1>
 
   <!-- <pre>{{ Formulario.value | json }} </pre>  -->
-  <form action="" class="" #Formulario="ngForm" (ngSubmit)="login(Formulario)">
+  <form action="" class="" #Formulario="ngForm" (ngSubmit)="obtenerUsuarios()">
     <div class="form-group col-md-3">
       <label for="">Correo Electronico</label>
       <input
@@ -27,9 +27,9 @@
       />
     </div>
 
-    <pre>{{ usuarios | json }} </pre>
+    <p class="mt-10" *ngIf="usuarios[0] == 'no'">Usuario no registrado o contraseña no válida</p>  <!-- poner margen tiop -->
 
 
-    <input class="btn btn-primary" type="submit" value="Login"  (click)="obtenerUsuarios()"/>
+    <input class="btn btn-primary" type="submit" value="Login"  (click)="login(Formulario)"/>
   </form>
 </div>

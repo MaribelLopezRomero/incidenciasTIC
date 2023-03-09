@@ -1,14 +1,10 @@
-<!--  -->
-<!--  -->
-<!-- TODAS LAS INCIDENCIAS DEL USUARIO -->
-
 
 <?php 
-// header("Access-Control-Allow-Origin: *");
-// header("Access-Control-Allow-Methods: GET, POST, PATCH, PUT, DELETE, OPTIONS");
-// header("Access-Control-Allow-Headers: Origin, Content-Type, X-Auth-Token");
-// header('Access-Control-Allow-Headers', 'X-Requested-With, Content-Type, X-Token-Auth, Authorization');
-// header("Content-Type: application/json");
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Methods: GET, POST, PATCH, PUT, DELETE, OPTIONS");
+header("Access-Control-Allow-Headers: Origin, Content-Type, X-Auth-Token");
+header('Access-Control-Allow-Headers', 'X-Requested-With, Content-Type, X-Token-Auth, Authorization');
+header("Content-Type: application/json");
 
 
   
@@ -19,7 +15,11 @@ $json = file_get_contents('php://input');
  
 $params = json_decode($json);
   // REALIZA LA QUERY A LA DB
-  $registros = mysqli_query($conexion, "SELECT * FROM incidencias where codUsu=".$params->codUsu);  //revisar comillas
+
+  // $registros = mysqli_query($conexion, "SELECT * FROM incidencia WHERE codUsu='".$params->codUsu."'");
+  $registros = mysqli_query($conexion, "SELECT * FROM incidencia WHERE codUsuInc=3");
+
+
   
   // RECORRE EL RESULTADO Y LO GUARDA EN UN ARRAY
   while ($resultado = mysqli_fetch_array($registros)){
@@ -30,5 +30,4 @@ $params = json_decode($json);
   
   echo $json; // MUESTRA EL JSON GENERADO
   
- // header('Content-Type: application/json');
 ?>
