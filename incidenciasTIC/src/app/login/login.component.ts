@@ -67,6 +67,8 @@ export class LoginComponent {
       result => this.usuarios = result
     );
 
+    console.log("dsfgdfg")
+
     //ARRAY PROVISIONAL QUE SIMULA DATOS DE LA BBDD
 
     // this.usuarios[0]={
@@ -76,7 +78,7 @@ export class LoginComponent {
     // console.log("entra a obtener usuarios")
   }
 
-  
+
 
 
 
