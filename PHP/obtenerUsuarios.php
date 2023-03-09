@@ -10,11 +10,10 @@
   require("conexion.php"); // IMPORTA EL ARCHIVO CON LA CONEXION A LA DB
 
   $conexion = conexion(); // CREA LA CONEXION
-$json = file_get_contents('php://input');
- 
-$params = json_decode($json);
+  $params = json_decode(file_get_contents('php://input'));
+  
   // REALIZA LA QUERY A LA DB
-  $registros = mysqli_query($conexion, "SELECT * FROM usuarios where email=".$params->email." and password=".$params->password);  //revisar comillas
+  $registros = mysqli_query($conexion, "SELECT * FROM usuario WHERE email='".$params->email."' AND password='".$params->password."'");
   
   $numRegistros=mysqli_num_rows($registros);
   // RECORRE EL RESULTADO Y LO GUARDA EN UN ARRAY

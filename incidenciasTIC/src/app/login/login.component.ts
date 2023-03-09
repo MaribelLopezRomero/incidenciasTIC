@@ -63,17 +63,17 @@ export class LoginComponent {
 
 
   obtenerUsuarios() {
-    // this.usuariosServicio.obtenerUsuarios(this.usuario).subscribe(
-    //   result => this.usuarios = result
-    // );
+    this.usuariosServicio.obtenerUsuarios(this.usuario).subscribe(
+      result => this.usuarios = result
+    );
 
     //ARRAY PROVISIONAL QUE SIMULA DATOS DE LA BBDD
 
-    this.usuarios[0]={
-      nombre:"maribel",
-      codUsu:1,
-    }
-    console.log("entra a obtener usuarios")
+    // this.usuarios[0]={
+    //   nombre:"maribel",
+    //   codUsu:1,
+    // }
+    // console.log("entra a obtener usuarios")
   }
 
   
