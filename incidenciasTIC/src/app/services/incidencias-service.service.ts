@@ -19,7 +19,7 @@ export class IncidenciasServiceService {
 
   // metodo para sacar todas las incidencias del usuario - USUARIO
   obtenerIncidenciasUsus(codUsu: number) {
-    return this.http.post(`${this.URL}listarIncidenciasUsuario.php `, codUsu);
+    return this.http.post(`${this.URL}listarIncidenciasUsuario.php `, JSON.stringify(codUsu));
   }
 
 

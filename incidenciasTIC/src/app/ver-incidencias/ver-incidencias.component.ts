@@ -19,7 +19,9 @@ export class VerIncidenciasComponent {
     this.obtenerIncidenciasUsu();
    }
 
-  codUsu:number=3; //esta variable la tenemos que recuperar del opbjeto usuario al logearnos
+  codUsu:any={
+    codUsu:3
+  }; //esta variable la tenemos que recuperar del opbjeto usuario al logearnos
   incidencias:any=[];
 
 
@@ -27,7 +29,6 @@ export class VerIncidenciasComponent {
     this.incidenciasService.obtenerIncidenciasUsus(this.codUsu).subscribe(
       result => this.incidencias = result
     );
-    console.log("hfhf");
 
   }
 

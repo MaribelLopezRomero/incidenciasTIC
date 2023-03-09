@@ -10,14 +10,17 @@ header("Content-Type: application/json");
   
   require("conexion.php"); // IMPORTA EL ARCHIVO CON LA CONEXION A LA DB
 
+
+
   $conexion = conexion(); // CREA LA CONEXION
-$json = file_get_contents('php://input');
- 
-$params = json_decode($json);
+
+$params = json_decode(file_get_contents('php://input'));
+
+
   // REALIZA LA QUERY A LA DB
 
-  // $registros = mysqli_query($conexion, "SELECT * FROM incidencia WHERE codUsu='".$params->codUsu."'");
-  $registros = mysqli_query($conexion, "SELECT * FROM incidencia WHERE codUsuInc=3");
+   $registros = mysqli_query($conexion, "SELECT * FROM incidencia WHERE codUsuInc='".$params->codUsu."'");
+  // $registros = mysqli_query($conexion, "SELECT * FROM incidencia WHERE codUsuInc=3");
 
 
   
