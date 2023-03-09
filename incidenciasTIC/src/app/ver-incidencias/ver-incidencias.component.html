@@ -1,25 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-        <title>Bootstrap Example</title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-      </head>
+  <head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
 
-<body>
+  <body>
     <div class="container p-5 my-3 bg-dark text-white">
-        <h2>Incidencias TIC</h2>
-        <ul class="nav">
-          <li class="nav-item">
-            <a href="./crearIncidencia.html" target="_black" class="nav-link text-white">Crear nueva incidencia</a>
-          </li>
-          <li class="nav-item">
-            <a href="./verIncidencia.html" target="_black" class="nav-link text-white disabled">Ver incidencias</a>
-          </li>
-        </ul>
-      </div>
+      <h2>Incidencias TIC</h2>
+      <ul class="nav">
+        <li class="nav-item">
+          <a
+            href="./crearIncidencia.html"
+            target="_black"
+            class="nav-link text-white"
+            >Crear nueva incidencia</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            href="./verIncidencia.html"
+            target="_black"
+            class="nav-link text-white disabled"
+            >Ver incidencias</a
+          >
+        </li>
+      </ul>
+    </div>
     <div class="container pt-2">
-    <table class="table">
+      <table class="table">
         <thead>
           <tr>
             <th>Fecha creación</th>
@@ -30,39 +40,38 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>xx/xx/xxxx</td>
-            <td>Ind1234569</td>
-            <td>Hardware</td>
-            <td>2ª DAW</td>
+          <tr *ngFor="let incidencia of incidencias; let i = index">
             <td>
-                <button type="button" id="buttonStatus" name="button" class="btn btn-success">Terminada</button>
+              {{ incidencia.fecha }}
             </td>
 
+            <td>
+              {{ incidencia.codInc }}
+            </td>
+
+            <td>
+              {{ incidencia.tipo }}
+            </td>
+
+            <td>
+              {{ incidencia.aula }}
+            </td>
+
+            <td>
+
+              <button type="button" id="buttonStatus" name="button"[ngClass]="incidencia.estad=== 'creado' ? 'btn btn-success' : incidencia.estad === 'en proceso' ? 'btn btn-warning' : 'btn btn-danger'">
+
+                {{ incidencia.estad }}
+             
+              </button>
+
+           
+            
+            </td>
           </tr>
-          <tr>
-            <tr>
-                <td>xx/xx/xxxx</td>
-                <td>Ind1234569</td>
-                <td>Hardware</td>
-                <td>2ª DAW</td>
-                <td>
-                    <button type="button" id="buttonStatus" name="button" class="btn btn-danger" >Creada</button>
-                </td>
-          </tr>
-          <tr>
-            <tr>
-                <td>xx/xx/xxxx</td>
-                <td>Ind1234569</td>
-                <td>Hardware</td>
-                <td>2ª DAW</td>
-                <td>
-                    <button type="button" id="buttonStatus" name="button" class="btn btn-warning">En proceso</button>
-                </td>
-          </tr>
+
         </tbody>
       </table>
     </div>
-    </body>
-
+  </body>
 </html>

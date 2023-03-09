@@ -20,13 +20,35 @@ export class VerIncidenciasComponent {
    }
 
   codUsu:number=0; //esta variable la tenemos que recuperar del opbjeto usuario al logearnos
-  incidencias:any={};
+  incidencias:any=[];
 
 
   obtenerIncidenciasUsu() {
-    this.incidenciasService.obtenerIncidenciasUsu(this.codUsu).subscribe(
-      result => this.incidencias = result
-    );
+    // this.incidenciasService.obtenerIncidenciasUsu(this.codUsu).subscribe(
+    //   result => this.incidencias = result
+    // );
+
+    this.incidencias[0]={
+      fecha:"12-12-12",
+      codInc:1,
+      tipo:"hardware",
+      aula:"2daw",
+      estad:"creado"
+    }
+    this.incidencias[1]={
+      fecha:"12-12-12",
+      codInc:1,
+      tipo:"hardware",
+      aula:"2daw",
+      estad:"terminado"
+    }
+    this.incidencias[2]={
+      fecha:"12-12-12",
+      codInc:1,
+      tipo:"hardware",
+      aula:"2daw",
+      estad:"en proceso"
+    }
   }
 
 
