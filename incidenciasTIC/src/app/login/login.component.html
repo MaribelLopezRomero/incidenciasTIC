@@ -1,7 +1,7 @@
 <div class="container">
   <h1>Iniciar sesion</h1>
 
-  <!-- <pre>{{ Formulario.value | json }} </pre> -->
+  <!-- <pre>{{ Formulario.value | json }} </pre>  -->
   <form action="" class="" #Formulario="ngForm" (ngSubmit)="login(Formulario)">
     <div class="form-group col-md-3">
       <label for="">Correo Electronico</label>
@@ -27,8 +27,9 @@
       />
     </div>
 
-    {{usuarios}}
+    <pre>{{ usuarios | json }} </pre> 
+    
 
-    <input class="btn btn-primary" type="submit" value="Login" />
+    <input class="btn btn-primary" type="submit" value="Login"  (click)="obtenerUsuarios()"/>
   </form>
 </div>

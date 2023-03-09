@@ -16,9 +16,12 @@ $params = json_decode($json);
   // REALIZA LA QUERY A LA DB
   $registros = mysqli_query($conexion, "SELECT * FROM usuarios where email=".$params->email." and password=".$params->password);  //revisar comillas
   
+  $numRegistros=mysqli_num_rows($registros);
   // RECORRE EL RESULTADO Y LO GUARDA EN UN ARRAY
-  while ($resultado = mysqli_fetch_array($registros)){
-    $datos[] = $resultado;
+  if ($numRegistros==1){
+    $datos[] = mysqli_fetch_array($registros);
+  }else{
+    $datos[]=null;
   }
   
   $json = json_encode($datos); // GENERA EL JSON CON LOS DATOS OBTENIDOS
