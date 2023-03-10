@@ -12,12 +12,12 @@
       <ul class="nav">
         <li class="nav-item">
           <a
-            href="./incidenciasUsuarioListar"
-            class="nav-link text-white"
+            class="nav-link text-white" disabled
             >Ver incidencias</a
           >
         </li>
-        <li class="nav-item">
+        <li class="nav-item" (click)="navegarCrearIncidencias()"
+        >
           <a
             href="./incidenciasUsuarioCrear"
             class="nav-link text-white"

@@ -41,6 +41,11 @@ export class VerIncidenciasComponent {
   }
 
 
+  navegarCrearIncidencias(){
+    this.router.navigate(['/incidenciasUsuarioCrear']);
+  }
+
+
 
 
 }

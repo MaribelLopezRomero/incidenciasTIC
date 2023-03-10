@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 import { IncidenciasServiceService } from '../services/incidencias-service.service';
 
 @Component({
@@ -9,8 +10,10 @@ import { IncidenciasServiceService } from '../services/incidencias-service.servi
 })
 export class CrearIncidenciaComponent {
 
-  constructor(private incidenciasServicio: IncidenciasServiceService) {
+  constructor(private router:Router, private route:ActivatedRoute, private incidenciasServicio: IncidenciasServiceService) {
+
     // this.crearIncidencia();
+
    }
 
 
@@ -74,4 +77,7 @@ export class CrearIncidenciaComponent {
 
   }
 
+  navegarVerIncidencias(){
+    this.router.navigate(['/incidenciasUsuarioListar']);
+  }
 }
