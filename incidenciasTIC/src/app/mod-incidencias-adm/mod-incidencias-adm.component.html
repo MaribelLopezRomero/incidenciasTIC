@@ -11,14 +11,14 @@
     </div>
     <div class="container mt-3">
       <h2>Incidencias Ind1234569</h2>           <!--RECOGER EL CODIGO DE LA INCIDENCIA DE LA BBDD-->
-      <form action="./gestionarIncidencia.html" method="post">
+      <form action="./gestionarIncidencia.html" method="post"  #Formulario="ngForm" (ngSubmit)="modificarIncidencia()">
         <div class="mb-3 d-flex selectores">
           <div class="p-1">Estado:</div>
           <div>
-            <select class="form-select" name="estado" id="estado" style="width: 200px">
-              <option value=""></option>
-              <option value="comercio">Terminada</option>
-              <option value="informatica">En Proceso</option>
+            <select class="form-select" name="estado" id="estado" style="width: 200px" required [(ngModel)]="incidenciaModificarForm.estado">
+              <option value="En proceso" selected>En proceso</option>
+
+              <option value="Terminada">Terminada</option>
             </select>
           </div>
         </div>
@@ -28,16 +28,17 @@
             >Feedback:</label
           >
           <textarea
-            name="text"
+            name="feedback"
             id="feedback"
             class="form-control"
             rows="8"
             cols="50"
+            [(ngModel)]="incidenciaModificarForm.feedback"
           ></textarea>
         </div>
 
         <div class="mb-3 mt-3 d-flex justify-content-center">
-            <input type="submit" id="buttonStatus" value="Enviar" class="btn btn-outline-secondary"/>
+            <input type="submit" id="buttonStatus" value="Enviar" class="btn btn-outline-secondary"  (click)="recogerDatos(Formulario)"/>
             <input value="Cancelar" id="buttonStatus" class="btn btn-outline-danger"/>
           </div>
 
