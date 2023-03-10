@@ -13,7 +13,7 @@ export class CrearIncidenciaComponent {
    }
 
 
-  altaIncidenciaUsu:any={
+  altaIncidenciaUsu={
 
     codUsuInc:3,
     fecha:"sdf",
@@ -25,9 +25,8 @@ export class CrearIncidenciaComponent {
     feedback:" "
   };
 
-  incidenciaOK:any={
-    status:false
-  }
+
+  incidenciaOK:any=[];
 
   crearIncidencia() {
     this.incidenciasServicio.crearIncidencia(this.altaIncidenciaUsu).subscribe(

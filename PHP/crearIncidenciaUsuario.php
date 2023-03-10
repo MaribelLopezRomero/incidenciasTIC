@@ -12,5 +12,14 @@ require("conexion.php"); // IMPORTA EL ARCHIVO CON LA CONEXION A LA DB
 $conexion = conexion(); // CREA LA CONEXION
 $params = json_decode(file_get_contents('php://input'));
 
-// REALIZA LA QUERY A LA DB
-$altaIncidencia = mysqli_query($conexion, "INSERT INTO incidencia (codUsuInc, fecha, tipo, aula, grupo, descripcion, feedback, estado) VALUES (" . $params->codUsuInc . ",'" . $params->fecha . "'," . $params->tipo . "," . $params->aula . "," . $params->grupo . "," . $params->descripcion . "," . $params->feedback . "," . $params->estado . ")");
+
+$altaIncidencia = mysqli_query($conexion, "INSERT INTO incidencia (codUsuInc, fecha, tipo, aula, grupo, descripcion, feedback, estado) VALUES (" . $params->codUsuInc . ",'" . $params->fecha . "','" . $params->tipo . "','" . $params->aula . "','" . $params->grupo . "','" . $params->descripcion . "','" . $params->feedback . "','" . $params->estado . "')");
+
+// VALIDA SI LA INSERCIÓN FUE EXITOSA
+if ($altaIncidencia) {
+    echo json_encode(array('success' => true));
+} else {
+    echo json_encode(array('success' => false));
+}
+
+mysqli_close($conexion); // CIERRA LA CONEXION

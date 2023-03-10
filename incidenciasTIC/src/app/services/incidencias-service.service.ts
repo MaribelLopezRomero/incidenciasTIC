@@ -22,7 +22,8 @@ export class IncidenciasServiceService {
     return this.http.post(`${this.URL}listarIncidenciasUsuario.php `, JSON.stringify(codUsu));
   }
     // metodo para crear incidencias -  USUARIO
-    crearIncidencia(altaIncidenciaUsu: any) {
+    crearIncidencia(altaIncidenciaUsu: { codUsuInc: number; fecha: string; tipo: string; aula: string; grupo: string; descripcion: string; estado: string; feedback: string; }) {
+      console.log(altaIncidenciaUsu);
       return this.http.post(`${this.URL}crearIncidenciaUsuario.php `, JSON.stringify(altaIncidenciaUsu));
     }
 
