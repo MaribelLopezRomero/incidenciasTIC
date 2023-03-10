@@ -67,9 +67,6 @@ export class LoginComponent {
       result => this.usuarios = result
     );
 
-    console.log("dsfgdfg")
-
-
   }
 
 
