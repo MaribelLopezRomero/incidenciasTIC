@@ -41,8 +41,6 @@ export class ModIncidenciasAdmComponent {
     this.modIncidenciaAdm.estado = estado;
     this.modIncidenciaAdm.feedback = feedback;
 
-    console.log("we",this.modIncidenciaAdm);
-
   }
 
 

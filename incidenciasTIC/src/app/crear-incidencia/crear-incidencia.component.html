@@ -11,18 +11,16 @@
       <ul class="nav">
         <li class="nav-item">
           <a
-            href="./crearIncidencia.html"
-            target="_black"
-            class="nav-link text-white disabled"
-            >Crear nueva incidencia</a
+            href="./incidenciasUsuarioListar"
+            class="nav-link text-white"
+            >Ver incidencias</a
           >
         </li>
         <li class="nav-item">
           <a
-            href="./verIncidencia.html"
-            target="_black"
+            href="./incidenciasUsuarioCrear"
             class="nav-link text-white"
-            >Ver incidencias</a
+            >Crear nueva incidencia</a
           >
         </li>
       </ul>
@@ -44,7 +42,7 @@
             >
               <option value=""></option>
               <option value="Hardware">Hardware</option>
-              <option value="Software">Software</option>
+              <option value="Softwares">Software</option>
             </select>
           </div>
 
@@ -200,6 +198,8 @@
           />
         </div>
       </form>
+
+      <p class="mt-10" *ngIf="incidenciaOK == 'false'">Error al crear la incidencia</p>  <!-- poner margen tiop -->
     </div>
   </body>
 </html>

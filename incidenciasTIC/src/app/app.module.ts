@@ -14,6 +14,10 @@ import { ModIncidenciasAdmComponent } from './mod-incidencias-adm/mod-incidencia
 
 const appRoutes:Routes=[
   {path:"login", component:LoginComponent},
+  {path:"incidenciasUsuarioListar/:codUsu", component:VerIncidenciasComponent},
+  {path:"incidenciasUsuarioCrear", component:CrearIncidenciaComponent},
+  {path:"modIncidenciasAdmin", component:ModIncidenciasAdmComponent},
+  {path:"gestionarIncidenciasAdmin", component:GestionarIncidenciaAdmComponent}
 ]
 
 @NgModule({

@@ -3,9 +3,6 @@ import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { UsuariosServiceService } from '../services/usuarios-service.service';
 
-
-
-
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -25,8 +22,6 @@ export class LoginComponent {
    };
 
 
-
-
   //objeto con los atributos que son los campos del formulario
   loginForm={
   email:"",
@@ -36,19 +31,10 @@ export class LoginComponent {
   //Variable para guadar lo que me traigo de la bbdd
 
   usuarios:any=[];
-
-
-
-
+  // usuarios[0].codUsu=0;
   //recoger los campos que vienen del formulario
 
   login(form:NgForm){
-    //validar el formulario
-    // console.log(form.valid);
-
-    // if(form.valid){
-    //   //llamada a la API o establecer la conexion con bbdd
-    // }
 
     const email=form.value.email;
     const password=form.value.password;
@@ -58,15 +44,16 @@ export class LoginComponent {
 
     console.log(this.usuario);
 
-  }
 
+  }
 
 
   obtenerUsuarios() {
     this.usuariosServicio.obtenerUsuarios(this.usuario).subscribe(
       result => this.usuarios = result
-    );
 
+    );
+    console.log(this.usuarios.codUsu);
   }
 
 

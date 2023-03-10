@@ -5,6 +5,7 @@
 
 
 import { Component } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { IncidenciasServiceService } from '../services/incidencias-service.service';
 
 
@@ -15,13 +16,19 @@ import { IncidenciasServiceService } from '../services/incidencias-service.servi
 })
 export class VerIncidenciasComponent {
 
-  constructor(private incidenciasService: IncidenciasServiceService) {
+  constructor(private router:Router, private route:ActivatedRoute, private incidenciasService: IncidenciasServiceService) {
+    this.codUsu.codUsu = this.route.snapshot.params['codUsu'];
     this.obtenerIncidenciasUsu();
+
+    console.log(this.codUsu.codUsu);
    }
 
   codUsu:any={
-    codUsu:3
-  }; //esta variable la tenemos que recuperar del opbjeto usuario al logearnos
+    codUsu:""
+  };
+
+
+  //esta variable la tenemos que recuperar del opbjeto usuario al logearnos
   incidencias:any=[];
 
 
@@ -29,6 +36,7 @@ export class VerIncidenciasComponent {
     this.incidenciasService.obtenerIncidenciasUsus(this.codUsu).subscribe(
       result => this.incidencias = result
     );
+    console.log(this.codUsu);
 
   }
 

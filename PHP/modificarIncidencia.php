@@ -17,9 +17,13 @@ $modIncidencia = mysqli_query($conexion, "UPDATE incidencia SET feedback = '" . 
 
 // VALIDA SI LA INSERCIÓN FUE EXITOSA
 if ($modIncidencia) {
-    echo json_encode(array('success' => true));
+    $incidenciaOK="true";
+   
 } else {
-    echo json_encode(array('success' => false));
+    $incidenciaOK="false";
 }
 
+$json = json_encode($incidenciaOK); // GENERA EL JSON CON LOS DATOS OBTENIDOS
+  
+echo $json; // MUESTRA EL JSON GENERAD
 mysqli_close($conexion); // CIERRA LA CONEXION

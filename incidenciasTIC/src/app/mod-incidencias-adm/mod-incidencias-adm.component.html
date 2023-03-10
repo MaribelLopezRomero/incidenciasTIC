@@ -15,10 +15,10 @@
         <div class="mb-3 d-flex selectores">
           <div class="p-1">Estado:</div>
           <div>
-            <select class="form-select" name="estado" id="estado" style="width: 200px" required [(ngModel)]="incidenciaModificarForm.estado">
-              <option value="En proceso" selected>En proceso</option>
-
+            <select class="form-select" name="estado" id="estado" style="width: 200px" [(ngModel)]="incidenciaModificarForm.estado">
+              <option value="En Proceso" selected></option>
               <option value="Terminada">Terminada</option>
+              <option value="En Proceso">En Proceso</option>
             </select>
           </div>
         </div>
@@ -43,6 +43,8 @@
           </div>
 
       </form>
+
+      <p class="mt-10" *ngIf="incidenciaOK == 'false'">Error al crear la incidencia</p>  <!-- poner margen tiop -->
     </div>
   </body>
 </html>

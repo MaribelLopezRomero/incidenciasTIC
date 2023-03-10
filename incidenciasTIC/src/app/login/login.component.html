@@ -30,6 +30,9 @@
     <p class="mt-10" *ngIf="usuarios[0] == 'no'">Usuario no registrado o contraseña no válida</p>  <!-- poner margen tiop -->
 
 
-    <input class="btn btn-primary" type="submit" value="Login"  (click)="login(Formulario)"/>
+    <input class="btn btn-primary" type="submit" value="Login"  (click)="login(Formulario)"
+    [routerLink]="['/incidenciasUsuarioListar', usuarios[0].codUsu]"/>
+
   </form>
+
 </div>
