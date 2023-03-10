@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { IncidenciasServiceService } from '../services/incidencias-service.service';
 
 @Component({
@@ -9,24 +10,62 @@ import { IncidenciasServiceService } from '../services/incidencias-service.servi
 export class CrearIncidenciaComponent {
 
   constructor(private incidenciasServicio: IncidenciasServiceService) {
-    this.crearIncidencia();
+    // this.crearIncidencia();
    }
 
 
   altaIncidenciaUsu={
 
-    codUsuInc:3,
-    fecha:"sdf",
-    tipo:"sdf",
-    aula:"sdf",
-    grupo:"sdf",
-    descripcion:"sdf",
-    estado: "Creada",
-    feedback:" "
+    codUsuInc:0, //aqui alomjeor lo tenemos que hacer por routing
+    fecha:"",
+    tipo:"",
+    aula:"",
+    grupo:"",
+    descripcion:"",
+    estado:"",
+    feedback:""
   };
+
+    //objeto con los atributos que son los campos del formulario
+    incidenciaForm={
+      fecha:"",
+      tipo:"",
+      aula:"",
+      grupo:"",
+      descripcion:"",
+      estado:"",
+      feedback:""
+      }
+
 
 
   incidenciaOK:any=[];
+
+  recogerDatos(form:NgForm){
+
+    const codUsuInc=3;
+    const tipo=form.value.tipo;
+    const aula=form.value.aula;
+    const descripcion=form.value.descripcion;
+    const fecha=form.value.fecha;
+    const grupo=form.value.grupo;
+    const estado="Creada";
+    const feedback=" ";
+
+    this.altaIncidenciaUsu.codUsuInc = codUsuInc;
+    this.altaIncidenciaUsu.tipo = tipo;
+    this.altaIncidenciaUsu.aula = aula;
+    this.altaIncidenciaUsu.descripcion = descripcion;
+    this.altaIncidenciaUsu.fecha = fecha;
+    this.altaIncidenciaUsu.grupo = grupo;
+    this.altaIncidenciaUsu.estado = estado;
+    this.altaIncidenciaUsu.feedback = feedback;
+
+    console.log(this.altaIncidenciaUsu);
+
+  }
+
+
 
   crearIncidencia() {
     this.incidenciasServicio.crearIncidencia(this.altaIncidenciaUsu).subscribe(

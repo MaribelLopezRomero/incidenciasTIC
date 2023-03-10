@@ -17,19 +17,5 @@ export class UsuariosServiceService {
     return this.http.post(`${this.URL}obtenerUsuarios.php `, JSON.stringify(usuario) );
   }
 
-  // altaUsuario(usuario) {
-  //   return this.http.post(`${this.URL}AltaUsuario.php`, JSON.stringify(usuario));
-  // }
 
-  // bajaUsuario(idUsuario: number) {
-  //   return this.http.get(`${this.URL}BajaUsuario.php?idUsuario=${idUsuario}`);
-  // }
-
-  // seleccionarUsuario(idUsuario: number) {
-  //   return this.http.get(`${this.URL}SeleccionarUsuario.php?idUsuario=${idUsuario}`);
-  // }
-
-  // editarUsuario(usuario) {
-  //   return this.http.post(`${this.URL}EditarUsuario.php`, JSON.stringify(usuario));
-  // }
 }
