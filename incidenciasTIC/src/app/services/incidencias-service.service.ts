@@ -14,7 +14,7 @@ export class IncidenciasServiceService {
 
   // metodo para sacar todas las incidencias  - ADMINISTRADOR
   obtenerIncidencias() {
-    return this.http.get(`${this.URL}listarIncidenciasAdministrador.php `);
+    return this.http.get(`${this.URL}listarIncidenciasAdministrador.php`);
   }
 
   // metodo para sacar todas las incidencias del usuario - USUARIO
