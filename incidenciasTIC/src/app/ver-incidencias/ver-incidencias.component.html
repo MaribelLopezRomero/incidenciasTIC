@@ -1,90 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Bootstrap Example</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-  </head>
 
-  <body>
-    <div class="container p-5 my-3 bg-dark text-white">
-      <h2>Incidencias TIC</h2>
-      <ul class="nav">
-        <li class="nav-item">
-          <a
-            class="nav-link text-white" disabled
-            >Ver incidencias</a
-          >
-        </li>
-        <li class="nav-item" (click)="navegarCrearIncidencias()"
-        >
-          <a
-            href="./incidenciasUsuarioCrear"
-            class="nav-link text-white"
-            >Crear nueva incidencia</a
-          >
-        </li>
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
 
-      </ul>
-    </div>
-    <div class="container pt-2">
-      <table class="table">
-        <thead>
-          <tr>
-            <th>Fecha creación</th>
-            <th>Código incidencia</th>
-            <th>Tipo</th>
-            <th>Aula</th>
-            <th>Grupo</th>
-            <th>Descripcion</th>
-            <th>Estado</th>
-          </tr>
-        </thead>
-        <tbody>
+<body>
+  <div class="container p-5 my-3 bg-dark text-white">
+    <h1>Incidencias's CORS</h1>
+    <ul class="nav">
+      <li class="nav-item">
+        <a class="nav-link text-white" disabled>Ver incidencias</a>
+      </li>
+      <li class="nav-item" (click)="navegarCrearIncidencias()">
+        <a href="./incidenciasUsuarioCrear" class="nav-link text-white">Crear nueva incidencia</a>
+      </li>
 
-
-
-
-          <tr *ngFor="let incidencia of incidencias; let i = index">
-            <td>
-              {{ incidencia.fecha }}
-            </td>
-
-            <td>
-              {{ incidencia.codInci }}
-            </td>
-
-            <td>
-              {{ incidencia.tipo }}
-            </td>
-
-            <td>
-              {{ incidencia.aula }}
-            </td>
-            <td>
-              {{ incidencia.grupo }}
-            </td>
-
-              <td>
-              {{ incidencia.descripcion }}
-            </td>
-
-            <td>
-
-              <button type="button" id="buttonStatus" name="button"[ngClass]="incidencia.estado=== 'Creada' ? 'btn btn-success' : incidencia.estado === 'En Proceso' ? 'btn btn-warning' : 'btn btn-danger'">
-
-                {{ incidencia.estado}}
-
-              </button>
-
-
-
-            </td>
-          </tr>
-
-        </tbody>
-      </table>
-
-    </div>
-  </body>
+    </ul>
+  </div>
+  <div class="container pt-2">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Fecha creación</th>
+          <th>Código incidencia</th>
+          <th>Tipo</th>
+          <th>Aula</th>
+          <th>Grupo</th>
+          <th>Descripcion</th>
+          <th>Estado</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let incidencia of incidencias; let i = index">
+          <td>
+            {{ incidencia.fecha }}
+          </td>
+          <td>
+            {{ incidencia.codInci }}
+          </td>
+          <td>
+            {{ incidencia.tipo }}
+          </td>
+          <td>
+            {{ incidencia.aula }}
+          </td>
+          <td>
+            {{ incidencia.grupo }}
+          </td>
+          <td>
+            {{ incidencia.descripcion }}
+          </td>
+          <td>
+            <button type="button" id="buttonStatus" name="button" [ngClass]="incidencia.estado=== 'Creada' ? 'btn btn-success' : incidencia.estado === 'En Proceso' ? 'btn btn-warning' : 'btn btn-danger'">
+              {{ incidencia.estado}}
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</body>
 </html>
