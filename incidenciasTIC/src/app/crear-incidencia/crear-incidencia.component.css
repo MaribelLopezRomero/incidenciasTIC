@@ -3,6 +3,18 @@ textarea {
 }
 
 .selectores {
-  display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
+}
+
+.selectores > div {
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+  .selectores > div {
+    flex-basis: 100%;
+    margin-right: 0;
+  }
 }

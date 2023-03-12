@@ -5,6 +5,10 @@
   <title>CORS - Solucionar incidencia</title>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!--Importamos los estilos de Bootstrap-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 
 <body>
@@ -15,15 +19,15 @@
   <div class="container mt-3">
 
     <!--RECOGER EL CODIGO DE LA INCIDENCIA DE LA BBDD-->
-    <h2>Incidencias XXXXXX </h2>
+    <h2 class="text-center">Incidencias XXXXXX </h2>
 
     <form action="./gestionarIncidencia.html" method="post" #Formulario="ngForm" (ngSubmit)="modificarIncidencia()">
       <!--DIV - DATOS INCIDENCIA-->
 
-      <div class="mb-3 d-flex selectores">
+      <div class="mb-3 d-flex flex-column flex-md-row align-items-center">
         <!--DIV - DESPLEGABLE ESTADO-->
         <div class="p-1">Estado:</div>
-        <div>
+        <div class="mx-md-2">
           <select class="form-select" name="estado" id="estado" style="width: 200px"
             [(ngModel)]="incidenciaModificarForm.estado">
             <option value="Gestion" selected></option>
@@ -41,15 +45,16 @@
       </div>
 
       <!--DIV - BOTON CREAR o CANCELAR LA GESTION DE LA INCIDENCIA-->
-      <div class="mb-3 mt-3 d-flex justify-content-center">
-        <input type="submit" id="buttonStatus" value="Enviar" class="btn btn-outline-secondary"
-          (click)="recogerDatos(Formulario)" style="margin-right: 20px;" />
+      <div class="mb-3 mt-3 d-flex justify-content-center flex-column flex-md-row">
+        <input type="submit" id="buttonStatus" value="Enviar" class="btn btn-outline-secondary mb-2 mb-md-0 me-md-2"
+          (click)="recogerDatos(Formulario)" />
         <input value="Cancelar" id="buttonStatus" class="btn btn-outline-danger" />
       </div>
+
     </form>
 
     <!--MENSAJE DE ERROR-->
-    <p class="mt-4" *ngIf="incidenciaOK == 'false'">Error al crear la incidencia</p>
+    <p class="mt-4 text-center" *ngIf="incidenciaOK == 'false'">Error al crear la incidencia</p>
   </div>
 </body>
 
