@@ -1,6 +1,7 @@
 
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 import { UsuariosServiceService } from '../services/usuarios-service.service';
 
 @Component({
@@ -10,7 +11,7 @@ import { UsuariosServiceService } from '../services/usuarios-service.service';
 })
 export class LoginComponent {
 
-  constructor(private usuariosServicio: UsuariosServiceService) {
+  constructor(private router:Router, private usuariosServicio: UsuariosServiceService) {
     // this.obtenerUsuarios();
    }
 
@@ -43,8 +44,8 @@ export class LoginComponent {
     this.usuario.password=password;
 
     console.log(this.usuario);
-
-
+    this.obtenerUsuarios();
+    this.navegarVerIncidencias();
   }
 
 
@@ -57,7 +58,12 @@ export class LoginComponent {
   }
 
 
+  navegarVerIncidencias(){
+    if(this.usuarios[0].codUsu == 9){
+      this.router.navigate(['/gestionarIncidenciasAdmin']);
+    }else{
+      this.router.navigate(['/incidenciasUsuarioListar', this.usuarios[0].codUsu]);
+  }
 
-
-
+  }
 }

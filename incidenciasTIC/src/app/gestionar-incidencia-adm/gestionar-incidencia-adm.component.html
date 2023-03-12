@@ -51,22 +51,23 @@
             {{ incidencia.feedback }}
           </td>
           <td>
-            <button type="button" id="buttonStatus" name="button" [ngClass]="incidencia.estado === 'Creada' ? 'btn btn-success' : incidencia.estado === 'Gestion' ? 'btn btn-warning' : 'btn btn-danger'">
+            <button type="button" id="buttonStatus" name="button" [ngClass]="incidencia.estado === 'Creada' ? 'btn btn-success' : incidencia.estado === 'En Proceso' ? 'btn btn-warning' : 'btn btn-danger'">
               {{ incidencia.estado }}
             </button>
           </td>
           <td>
             <!-- AÑADIR ROUTING -->
-            <a href="./mod-incidencias-adm\mod-incidencias-adm.component.html">
-              <button type="button" id="buttonStatus" name="button" class="btn btn-secondary">
+
+              <button type="button" id="buttonStatus" name="button" class="btn btn-secondary" (click)="gestionarIncidencias(this.i)">
                 Gestionar
               </button>
-            </a>
+
           </td>
         </tr>
       </tbody>
     </table>
   </div>
+  {{incidencias | json}}
 </body>
 
 </html>

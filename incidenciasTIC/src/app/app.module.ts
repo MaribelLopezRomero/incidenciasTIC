@@ -17,7 +17,7 @@ const appRoutes:Routes=[
   {path:"login", component:LoginComponent},
   {path:"incidenciasUsuarioListar/:codUsu", component:VerIncidenciasComponent},
   {path:"incidenciasUsuarioCrear/:codUsu", component:CrearIncidenciaComponent},
-  {path:"modIncidenciasAdmin", component:ModIncidenciasAdmComponent},
+  {path:"modIncidenciasAdmin/:codInci", component:ModIncidenciasAdmComponent},
   {path:"gestionarIncidenciasAdmin", component:GestionarIncidenciaAdmComponent}
 ]
 

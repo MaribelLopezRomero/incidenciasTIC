@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 import { IncidenciasServiceService } from '../services/incidencias-service.service';
 
 @Component({
@@ -9,8 +10,10 @@ import { IncidenciasServiceService } from '../services/incidencias-service.servi
 })
 export class ModIncidenciasAdmComponent {
 
-  constructor(private incidenciasServicio: IncidenciasServiceService) {
+  constructor(private router:Router, private route:ActivatedRoute, private incidenciasServicio: IncidenciasServiceService) {
     // this.crearIncidencia();
+    this.modIncidenciaAdm.codInc = this.route.snapshot.params['codInci'];
+    this.modIncidenciaAdm.descripcion = this.route.snapshot.queryParams['descripcion'];
    }
 
 
@@ -18,6 +21,7 @@ export class ModIncidenciasAdmComponent {
 
     codInc:0, //aqui alomjeor lo tenemos que hacer por routing
     estado:"",
+    descripcion:"",
     feedback:""
   };
 
@@ -33,7 +37,7 @@ export class ModIncidenciasAdmComponent {
 
   recogerDatos(form:NgForm){
 
-    const codInc=1;
+    const codInc=this.modIncidenciaAdm.codInc;
     const estado=form.value.estado;
     const feedback=form.value.feedback;
 
@@ -41,6 +45,8 @@ export class ModIncidenciasAdmComponent {
     this.modIncidenciaAdm.estado = estado;
     this.modIncidenciaAdm.feedback = feedback;
 
+    this.modificarIncidencia();
+    this.router.navigate(['/gestionarIncidenciasAdmin']);
   }
 
 
@@ -54,6 +60,10 @@ export class ModIncidenciasAdmComponent {
     console.log("SDF");
     console.log(this.modIncidenciaAdm)
 
+  }
+
+  navegarGestionarIncidencias(){
+    this.router.navigate(['/gestionarIncidenciasAdmin']);
   }
 
 }

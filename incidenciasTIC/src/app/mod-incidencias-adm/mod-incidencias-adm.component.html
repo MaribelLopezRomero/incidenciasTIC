@@ -7,8 +7,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <!--Importamos los estilos de Bootstrap-->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
 </head>
 
 <body>
@@ -19,7 +19,7 @@
   <div class="container mt-3">
 
     <!--RECOGER EL CODIGO DE LA INCIDENCIA DE LA BBDD-->
-    <h2 class="text-center">Incidencias XXXXXX </h2>
+    <h2 class="text-center">Incidencia {{modIncidenciaAdm.codInc}}: {{modIncidenciaAdm.descripcion}}</h2>
 
     <form action="./gestionarIncidencia.html" method="post" #Formulario="ngForm" (ngSubmit)="modificarIncidencia()">
       <!--DIV - DATOS INCIDENCIA-->
@@ -32,7 +32,7 @@
             [(ngModel)]="incidenciaModificarForm.estado">
             <option value="Gestion" selected></option>
             <option value="Terminada">Terminada</option>
-            <option value="Gestion">En Proceso</option>
+            <option value="En Proceso">En Proceso</option>
           </select>
         </div>
       </div>
@@ -48,7 +48,7 @@
       <div class="mb-3 mt-3 d-flex justify-content-center flex-column flex-md-row">
         <input type="submit" id="buttonStatus" value="Enviar" class="btn btn-outline-secondary mb-2 mb-md-0 me-md-2"
           (click)="recogerDatos(Formulario)" />
-        <input value="Cancelar" id="buttonStatus" class="btn btn-outline-danger" />
+        <input value="Cancelar" id="buttonStatus" class="btn btn-outline-danger" (click)="navegarGestionarIncidencias()"/>
       </div>
 
     </form>

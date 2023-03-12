@@ -46,7 +46,7 @@ export class CrearIncidenciaComponent {
 
   recogerDatos(form:NgForm){
 
-    const codUsuInc=3;
+    const codUsuInc=this.altaIncidenciaUsu.codUsuInc;
     const tipo=form.value.tipo;
     const aula=form.value.aula;
     const descripcion=form.value.descripcion;

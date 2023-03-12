@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NavigationExtras, Router } from '@angular/router';
 import { IncidenciasServiceService } from '../services/incidencias-service.service';
 
 @Component({
@@ -8,7 +9,7 @@ import { IncidenciasServiceService } from '../services/incidencias-service.servi
 })
 export class GestionarIncidenciaAdmComponent {
 
-  constructor(private incidenciasServicio: IncidenciasServiceService) {
+  constructor(private router:Router, private incidenciasServicio: IncidenciasServiceService) {
     this.obtenerIncidencias();
    }
 
@@ -20,6 +21,13 @@ export class GestionarIncidenciaAdmComponent {
       result => this.incidencias = result
     );
 
+  }
+
+  gestionarIncidencias(i: number) {
+    let navigationExtras: NavigationExtras = {
+      queryParams: { descripcion: this.incidencias[i].descripcion }
+    };
+    this.router.navigate(['/modIncidenciasAdmin', this.incidencias[i].codInci], navigationExtras);
   }
 
 }
