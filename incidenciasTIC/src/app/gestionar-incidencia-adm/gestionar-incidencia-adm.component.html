@@ -26,7 +26,16 @@
           <th>Grupo</th>
           <th>Descripción</th>
           <th>Feedback</th>
-          <th>Estado</th>
+          <th>Estado
+            <div class="mx-md-2">
+              <select class="form-select" name="estado" id="estado" style="width: 200px" [(ngModel)]="estadoSeleccionado" (change)="seleccionEstado()">
+                <option value="Todas">Todas</option>
+                <option value="Creada">Creada</option>
+                <option value="Terminada">Terminada</option>
+                <option value="En Proceso">En Proceso</option>
+              </select>
+            </div>
+          </th>
           <th></th>
         </tr>
       </thead>
