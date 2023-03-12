@@ -51,7 +51,7 @@
             {{ incidencia.feedback }}
           </td>
           <td>
-            <button type="button" id="buttonStatus" name="button" [ngClass]="incidencia.estado === 'Creada' ? 'btn btn-success' : incidencia.estado === 'En Proceso' ? 'btn btn-warning' : 'btn btn-danger'">
+            <button type="button" id="buttonStatus" name="button" [ngClass]="incidencia.estado === 'Creada' ? 'btn btn-success' : incidencia.estado === 'Gestion' ? 'btn btn-warning' : 'btn btn-danger'">
               {{ incidencia.estado }}
             </button>
           </td>
