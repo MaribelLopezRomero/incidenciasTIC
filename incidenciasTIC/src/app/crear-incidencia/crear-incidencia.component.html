@@ -29,7 +29,7 @@
 
   <div class="container mt-3">
     <h2>Datos de incidencia</h2>
-    <form action="./crearIncidencia.html" method="post" #Formulario="ngForm" (ngSubmit)="crearIncidencia()">
+    <form action="./crearIncidencia.html" method="post" #Formulario="ngForm">
 
       <!--DIV - DATOS INCIDENCIA-->
       <div class="mb-3 d-flex selectores">
@@ -37,8 +37,8 @@
         <!--DIV - TIPO INCIDENCIA-->
         <div class="p-1">Tipo:</div>
         <div>
-          <select class="form-select" name="tipo" id="tipo" style="width: 200px" [(ngModel)]="incidenciaForm.tipo">
-            <option value=""></option>
+          <select class="form-select" name="tipo" id="tipo" style="width: 200px" [(ngModel)]="incidenciaForm.tipo" (blur)="validarTipo()">
+            <option value="">Selecciona un tipo de incidencia</option>
             <option value="Hardware">Hardware</option>
             <option value="Software">Software</option>
           </select>
@@ -47,7 +47,7 @@
         <!--DIV - AULAS-->
         <div class="p-1">Aula:</div>
         <div>
-          <select class="form-select" name="aula" id="aula" style="width: 200px" [(ngModel)]="incidenciaForm.aula">
+          <select class="form-select" name="aula" id="aula" style="width: 200px" [(ngModel)]="incidenciaForm.aula" (blur)="validarAula()">
             <option value=""></option>
             <option value="B.1">B.1</option>
             <option value="B.2">B.2</option>
@@ -99,7 +99,7 @@
         <!--DIV - GRUPO-->
         <div class="p-1">Grupo:</div>
         <div>
-          <select class="form-select" name="grupo" id="grupo" style="width: 200px" [(ngModel)]="incidenciaForm.grupo">
+          <select class="form-select" name="grupo" id="grupo" style="width: 200px" [(ngModel)]="incidenciaForm.grupo" (blur)="validarGrupo()">
             <option value=""></option>
             <option value="1ºComercio Internacional Dual">1º Comercio Internacional Dual</option>
             <option value="1ºCom">1º COM</option>
@@ -156,7 +156,7 @@
         <!--DIV - FECHA-->
         <div>
           Fecha:
-          <input type="date" name="fecha" [(ngModel)]="incidenciaForm.fecha" />
+          <input type="date" name="fecha" [(ngModel)]="incidenciaForm.fecha" (blur)="validarFecha()"/>
         </div>
       </div>
 
@@ -164,7 +164,7 @@
       <div class="mb-3 mt-3">
         <label for="comentario" class="form-label">Escribe la incidencia:</label>
         <textarea name="descripcion" id="comentario" class="form-control" rows="8" cols="50"
-          [(ngModel)]="incidenciaForm.descripcion"></textarea>
+          [(ngModel)]="incidenciaForm.descripcion" (blur)="validarDescripcion()"></textarea>
       </div>
 
       <!--DIV - BOTON CREAR LA INCIDENCIA-->

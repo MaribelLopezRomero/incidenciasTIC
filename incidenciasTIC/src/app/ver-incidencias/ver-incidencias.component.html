@@ -34,8 +34,8 @@
           <th>Aula</th>
           <th>Grupo</th>
           <th>Descripcion</th>
-          <th>Estado</th>
           <th>Feedback</th>
+          <th>Estado</th>
         </tr>
       </thead>
       <tbody>
@@ -58,15 +58,16 @@
           <td>
             {{ incidencia.descripcion }}
           </td>
-          <!-- ESTO HAY QUE TOCARLO, QUE SI HAY FEEDBACK SE VEA EL FEEDBACK, Y SINO QUE ESTE VACIO -->
-          <!-- <td>
+          <td>
             {{ incidencia.feedback }}
-          </td> -->
+          </td>
           <td>
             <button type="button" id="buttonStatus" name="button" [ngClass]="incidencia.estado=== 'Creada' ? 'btn btn-success' : incidencia.estado === 'En Proceso' ? 'btn btn-warning' : 'btn btn-danger'">
               {{ incidencia.estado}}
             </button>
           </td>
+
+
         </tr>
       </tbody>
     </table>
