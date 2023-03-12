@@ -66,4 +66,7 @@ export class ModIncidenciasAdmComponent {
     this.router.navigate(['/gestionarIncidenciasAdmin']);
   }
 
+  navegarLogin(){
+    this.router.navigate(['']);
+  }
 }

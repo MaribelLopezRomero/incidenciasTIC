@@ -46,6 +46,9 @@ export class VerIncidenciasComponent {
   }
 
 
+  navegarLogin(){
+    this.router.navigate(['']);
+  }
 
 
 }

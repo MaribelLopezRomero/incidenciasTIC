@@ -10,7 +10,10 @@
 <body>
   <div class="container p-5 my-3 bg-dark text-white">
     <h1>Incidencias's CORS</h1>
-    <h3>Gestión de incidencias</h3>
+    <div class="nav" >
+    <h3 class="nav-item">Gestión de incidencias</h3>
+    <button class="nav-item ms-auto bg-dark text-white border-0" (click)="navegarLogin()">Cerrar Sesión</button>
+    </div>
   </div>
   <div class="container table-responsive">
     <table class="table">
@@ -67,7 +70,6 @@
       </tbody>
     </table>
   </div>
-  {{incidencias | json}}
 </body>
 
 </html>

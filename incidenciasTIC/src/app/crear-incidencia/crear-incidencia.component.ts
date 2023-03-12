@@ -81,4 +81,8 @@ export class CrearIncidenciaComponent {
   navegarVerIncidencias(){
     this.router.navigate(['/incidenciasUsuarioListar', this.altaIncidenciaUsu.codUsuInc]);
   }
+
+  navegarLogin(){
+    this.router.navigate(['']);
+  }
 }
