@@ -13,7 +13,7 @@ export class CrearIncidenciaComponent {
   constructor(private router:Router, private route:ActivatedRoute, private incidenciasServicio: IncidenciasServiceService) {
 
     // this.crearIncidencia();
-
+      this.altaIncidenciaUsu.codUsuInc = this.route.snapshot.params['codUsu'];
    }
 
 
@@ -64,8 +64,9 @@ export class CrearIncidenciaComponent {
     this.altaIncidenciaUsu.estado = estado;
     this.altaIncidenciaUsu.feedback = feedback;
 
-    console.log(this.altaIncidenciaUsu);
+    this.crearIncidencia();
 
+    this.router.navigate(['/incidenciasUsuarioListar', this.altaIncidenciaUsu.codUsuInc]);
   }
 
 
@@ -78,6 +79,6 @@ export class CrearIncidenciaComponent {
   }
 
   navegarVerIncidencias(){
-    this.router.navigate(['/incidenciasUsuarioListar']);
+    this.router.navigate(['/incidenciasUsuarioListar', this.altaIncidenciaUsu.codUsuInc]);
   }
 }

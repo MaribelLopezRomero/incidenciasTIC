@@ -42,7 +42,7 @@ export class VerIncidenciasComponent {
 
 
   navegarCrearIncidencias(){
-    this.router.navigate(['/incidenciasUsuarioCrear']);
+    this.router.navigate(['./incidenciasUsuarioCrear', this.codUsu.codUsu]);
   }
 
 

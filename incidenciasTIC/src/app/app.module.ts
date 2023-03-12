@@ -13,9 +13,10 @@ import { VerIncidenciasComponent } from './ver-incidencias/ver-incidencias.compo
 import { ModIncidenciasAdmComponent } from './mod-incidencias-adm/mod-incidencias-adm.component';
 
 const appRoutes:Routes=[
+  {path:"", component:LoginComponent},
   {path:"login", component:LoginComponent},
   {path:"incidenciasUsuarioListar/:codUsu", component:VerIncidenciasComponent},
-  {path:"incidenciasUsuarioCrear", component:CrearIncidenciaComponent},
+  {path:"incidenciasUsuarioCrear/:codUsu", component:CrearIncidenciaComponent},
   {path:"modIncidenciasAdmin", component:ModIncidenciasAdmComponent},
   {path:"gestionarIncidenciasAdmin", component:GestionarIncidenciaAdmComponent}
 ]

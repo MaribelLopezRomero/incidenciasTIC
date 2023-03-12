@@ -14,10 +14,10 @@
     <h3>Crear incidencias</h3>
     <ul class="nav">
       <li class="nav-item" (click)="navegarVerIncidencias()">
-        <a href="./incidenciasUsuarioListar" class="nav-link text-white">Ver incidencias</a>
+        <button class="nav-link text-white bg-dark border-0">Ver incidencias</button>
       </li>
       <li class="nav-item">
-        <a href="./incidenciasUsuarioCrear" class="nav-link text-white">Crear nueva incidencia</a>
+        <button class="nav-link text-white bg-dark border-0">Crear nueva incidencia</button>
       </li>
     </ul>
   </div>
@@ -36,7 +36,7 @@
           <select class="form-select" name="tipo" id="tipo" style="width: 200px" [(ngModel)]="incidenciaForm.tipo">
             <option value=""></option>
             <option value="Hardware">Hardware</option>
-            <option value="Softwares">Software</option>
+            <option value="Software">Software</option>
           </select>
         </div>
 
@@ -100,13 +100,13 @@
             <option value="1ºComercio Internacional Dual">1º Comercio Internacional Dual</option>
             <option value="1ºCom">1º COM</option>
             <option value="2ºCom">2º COM</option>
-            <option value="1ºComTarde">1º COM TARDE</option>
-            <option value="2ºComTarde">2º COM TARDE</option>
+            <option value="1ºCom Tarde">1º COM TARDE</option>
+            <option value="2ºCom Tarde">2º COM TARDE</option>
             <option value="1ºFPB">1º FPB</option>
             <option value="2ºFPB">2º FPB</option>
             <option value="1ºCI">1º CI</option>
             <option value="2ºCI">2º CI</option>
-            <option value="ComercioDistancia">Comercio Distancia</option>
+            <option value="Comercio Distancia">Comercio Distancia</option>
             <option value="1ºEI A">1º EI A</option>
             <option value="1ºEI B">1º EI B</option>
             <option value="2ºEI A">2º EI A</option>
@@ -127,7 +127,7 @@
             <option value="2ºDAW">2º DAW</option>
             <option value="1ºDAM">1º DAM</option>
             <option value="2ºDAM">2º DAM</option>
-            <option value="1ºASIRDUAL">1º ASIR DUAL</option>
+            <option value="1ºASIR DUAL">1º ASIR DUAL</option>
             <option value="1ºSMR">1º SMR</option>
             <option value="2ºSMR">2º SMR</option>
             <option value="1ºFPB AF">1º FPB AF</option>
@@ -145,7 +145,7 @@
             <option value="1ºJARD">1º JARD</option>
             <option value="2ºJARD">2º JARD</option>
             <option value="ACEPELU">ACEPELU</option>
-            <option value="ACEMBE">ACE MBE</option>
+            <option value="ACE MBE">ACE MBE</option>
           </select>
         </div>
 
@@ -165,7 +165,7 @@
 
       <!--DIV - BOTON CREAR LA INCIDENCIA-->
       <div class="mb-3 mt-3">
-        <input type="submit" value="Enviar" class="btn btn-outline-secondary" (click)="recogerDatos(Formulario)" />
+        <input type="submit" value="Enviar" class="btn btn-outline-secondary" (click)="recogerDatos(Formulario)"/>
       </div>
     </form>
 
