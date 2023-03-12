@@ -1,85 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Bootstrap Example</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-  </head>
 
-  <body>
-    <div class="container p-5 my-3 bg-dark text-white">
-      <h2>Gestionar Incidencias TIC</h2>
-    </div>
-    <div class="container pt-2">
-      <table class="table">
-        <thead>
-          <tr>
-            <th>Fecha creación</th>
-            <th>Código incidencia</th>
-            <th>Tipo</th>
-            <th>Aula</th>
-            <th>Estado</th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let incidencia of incidencias; let i = index">
-            <td>
-              {{ incidencia.fecha }}
-            </td>
+<head>
+  <title>CORS - Gestionar incidencia</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
 
-            <td>
-              {{ incidencia.codInci }}
-            </td>
-
-            <td>
-              {{ incidencia.tipo }}
-            </td>
-
-            <td>
-              {{ incidencia.aula }}
-            </td>
-            <td>
-              {{ incidencia.grupo }}
-            </td>
-
-            <td>
-              {{ incidencia.descripcion }}
-            </td>
-
-            <td>
-              <button
-                type="button"
-                id="buttonStatus"
-                name="button"
-                [ngClass]="
-                  incidencia.estado === 'Creada'
-                    ? 'btn btn-success'
-                    : incidencia.estado === 'En Proceso'
-                    ? 'btn btn-warning'
-                    : 'btn btn-danger'
-                "
-              >
-                {{ incidencia.estado }}
+<body>
+  <div class="container p-5 my-3 bg-dark text-white">
+    <h1>Incidencias's CORS</h1>
+    <h3>Gestión de incidencias</h3>
+  </div>
+  <div class="container pt-2">
+    <table class="table">
+      <thead>
+        <tr style="text-align: center">
+          <th>Fecha</th>
+          <th>Nº incidencia</th>
+          <th>Tipo</th>
+          <th>Aula</th>
+          <th>Grupo</th>
+          <th>Descripción</th>
+          <th>Feedback</th>
+          <th>Estado</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let incidencia of incidencias; let i = index">
+          <td style="text-align: center">
+            {{ incidencia.fecha }}
+          </td>
+          <td style="text-align: center">
+            {{ incidencia.codInci }}
+          </td>
+          <td style="text-align: center">
+            {{ incidencia.tipo }}
+          </td>
+          <td style="text-align: center">
+            {{ incidencia.aula }}
+          </td>
+          <td style="text-align: center">
+            {{ incidencia.grupo }}
+          </td>
+          <td>
+            {{ incidencia.descripcion }}
+          </td>
+          <td>
+            {{ incidencia.feedback }}
+          </td>
+          <td>
+            <button type="button" id="buttonStatus" name="button" [ngClass]="incidencia.estado === 'Creada' ? 'btn btn-success' : incidencia.estado === 'En Proceso' ? 'btn btn-warning' : 'btn btn-danger'">
+              {{ incidencia.estado }}
+            </button>
+          </td>
+          <td>
+            <!-- AÑADIR ROUTING -->
+            <a href="./mod-incidencias-adm\mod-incidencias-adm.component.html">
+              <button type="button" id="buttonStatus" name="button" class="btn btn-secondary">
+                Gestionar
               </button>
-            </td>
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</body>
 
-            <td>
-              <!-- AÑADIR ROUTING -->
-              <a href="./incidencia.html">
-                <button
-                  type="button"
-                  id="buttonStatus"
-                  name="button"
-                  class="btn btn-secondary"
-                >
-                  Gestionar
-                </button>
-              </a>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </body>
 </html>

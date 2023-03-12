@@ -1,205 +1,177 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Crear incidencia</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-  </head>
-  <body>
-    <div class="container p-5 my-3 bg-dark text-white">
-      <h2>Incidencias TIC</h2>
-      <ul class="nav">
-        <li class="nav-item" (click)="navegarVerIncidencias()">
-          <a
-            href="./incidenciasUsuarioListar"
-            class="nav-link text-white"
-            >Ver incidencias</a
-          >
-        </li>
-        <li class="nav-item">
-          <a
-            href="./incidenciasUsuarioCrear"
-            class="nav-link text-white"
-            >Crear nueva incidencia</a
-          >
-        </li>
-      </ul>
-    </div>
-    <div class="container mt-3">
-      <h2>Datos de usuario</h2>
-      <!--nombre/apellidos/email/contraseña/departamento-->
-      <form action="./crearIncidencia.html" method="post"  #Formulario="ngForm" (ngSubmit)="crearIncidencia()">
-        <div class="mb-3 d-flex selectores">
-          <div class="p-1">Tipo:</div>
-          <!--CARGAR CON LA BBDD  TODAS LOS TIPO-->
-          <div>
-            <select
-              class="form-select"
-              name="tipo"
-              id="tipo"
-              style="width: 200px"
-              [(ngModel)]="incidenciaForm.tipo"
-            >
-              <option value=""></option>
-              <option value="Hardware">Hardware</option>
-              <option value="Softwares">Software</option>
-            </select>
-          </div>
 
+<head>
+  <title>CORS - Crear incidencia</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
 
-          <div class="p-1">Aula:</div>
-          <!--CARGAR CON LA BBDD  TODAS LAS AULAS-->
-          <div>
-            <select
-              class="form-select"
-              name="aula"
-              id="aula"
-              style="width: 200px"
-              [(ngModel)]="incidenciaForm.aula"
-            >
-              <option value=""></option>
-              <option value="B.1">B.1</option>
-              <option value="B.2">B.2</option>
-              <option value="B.3">B.3</option>
-              <option value="B.4">B.4</option>
-              <option value="B.5">B.5</option>
-              <option value="B.7">B.7</option>
-              <option value="B.9">B.9</option>
-              <option value="B.11">B.11</option>
-              <option value="B.13">B.13</option>
-              <option value="1.1">1.1</option>
-              <option value="1.2">1.2</option>
-              <option value="1.3">1.3</option>
-              <option value="1.3">1.3</option>
-              <option value="1.4">1.4</option>
-              <option value="1.5">1.5</option>
-              <option value="1.6">1.6</option>
-              <option value="1.7">1.7</option>
-              <option value="1.8">1.8</option>
-              <option value="1.9">1.9</option>
-              <option value="1.10">1.10</option>
-              <option value="1.11">1.11</option>
-              <option value="1.12">1.12</option>
-              <option value="1.3">1.13</option>
-              <option value="1.14">1.14</option>
-              <option value="1.15">1.15</option>
-              <option value="1.16">1.16</option>
-              <option value="1.17">1.17</option>
-              <option value="1.18">1.18</option>
-              <option value="1.19">1.19</option>
-              <option value="1.20">1.20</option>
-              <option value="1.21">1.21</option>
-              <option value="1.22">1.22</option>
-              <option value="1.23">1.23</option>
-              <option value="2.1">2.1</option>
-              <option value="2.2">2.2</option>
-              <option value="2.3">2.3</option>
-              <option value="2.4">2.4</option>
-              <option value="2.5">2.5</option>
-              <option value="2.6">2.6</option>
-              <option value="2.7">2.7</option>
-              <option value="2.8">2.8</option>
-              <option value="2.9">2.9</option>
-              <option value="2.11">2.11</option>
-              <option value="2.13">2.13</option>
+<body>
+  <!-- DIV - CABECERA -->
+  <div class="container p-5 my-3 bg-dark text-white">
+    <h1>Incidencias's CORS</h1>
+    <h3>Crear incidencias</h3>
+    <ul class="nav">
+      <li class="nav-item" (click)="navegarVerIncidencias()">
+        <a href="./incidenciasUsuarioListar" class="nav-link text-white">Ver incidencias</a>
+      </li>
+      <li class="nav-item">
+        <a href="./incidenciasUsuarioCrear" class="nav-link text-white">Crear nueva incidencia</a>
+      </li>
+    </ul>
+  </div>
 
+  <!-- DIV - CONTENIDO -->
+  <div class="container mt-3">
+    <h2>Datos de incidencia</h2>
+    <form action="./crearIncidencia.html" method="post" #Formulario="ngForm" (ngSubmit)="crearIncidencia()">
 
-            </select>
-          </div>
+      <!--DIV - DATOS INCIDENCIA-->
+      <div class="mb-3 d-flex selectores">
 
-          <div class="p-1">Grupo:</div>
-          <div>
-            <select
-              class="form-select"
-              name="grupo"
-              id="grupo"
-              style="width: 200px"
-              [(ngModel)]="incidenciaForm.grupo"
-            >
-              <option value=""></option>
-              <option value="1ºComercio Internacional Dual">1º Comercio Internacional Dual</option>
-              <option value="1ºCom">1º COM</option>
-              <option value="2ºCom">2º COM</option>
-              <option value="1ºComTarde">1º COM TARDE</option>
-              <option value="2ºComTarde">2º COM TARDE</option>
-              <option value="1ºFPB">1º FPB</option>
-              <option value="2ºFPB">2º FPB</option>
-              <option value="1ºCI">1º CI</option>
-              <option value="2ºCI">2º CI</option>
-              <option value="ComercioDistancia">Comercio Distancia</option>
-              <option value="1ºEI A">1º EI A</option>
-              <option value="1ºEI B">1º EI B</option>
-              <option value="2ºEI A">2º EI A</option>
-              <option value="2ºEI B">2º EI B</option>
-              <option value="1ºIS A">1º IS A</option>
-              <option value="1ºIS B">1º IS B</option>
-              <option value="2ºIS A">2º IS A</option>
-              <option value="2ºIS B">2º IS B</option>
-              <option value="1ºIS Tarde">1º IS Tarde</option>
-              <option value="2ºIS Tarde">2º IS Tarde</option>
-              <option value="1ºMC A">1º MC A</option>
-              <option value="1ºMC B">1º MC B</option>
-              <option value="2ºMC A">2º MC A</option>
-              <option value="2ºMC B">2º MC B</option>
-              <option value="1ºAPD">1º APD</option>
-              <option value="2ºAPD">2º APD</option>
-              <option value="1ºDAW">1º DAW</option>
-              <option value="2ºDAW">2º DAW</option>
-              <option value="1ºDAM">1º DAM</option>
-              <option value="2ºDAM">2º DAM</option>
-              <option value="1ºASIRDUAL">1º ASIR DUAL</option>
-              <option value="1ºSMR">1º SMR</option>
-              <option value="2ºSMR">2º SMR</option>
-              <option value="1ºFPB AF">1º FPB AF</option>
-              <option value="1ºGUIA">1º GUIA</option>
-              <option value="2ºGUIA">1º GUIA</option>
-              <option value="1ºAFD A">1º AFD A</option>
-              <option value="1ºAFD B">1º AFD B</option>
-              <option value="2ºAFD A">2º AFD A</option>
-              <option value="2ºAFD B">2º AFD B</option>
-              <option value="1ºAF">1º AF</option>
-              <option value="2ºAF">2º AF</option>
-              <option value="1ºAGM">1º AGM</option>
-              <option value="2ºAGM">1º AGM</option>
-              <option value="1ºASDI">1º ASDI</option>
-              <option value="1ºJARD">1º JARD</option>
-              <option value="2ºJARD">2º JARD</option>
-              <option value="ACEPELU">ACEPELU</option>
-              <option value="ACEMBE">ACE MBE</option>
-            </select>
-          </div>
-          <div>
-            Fecha:
-            <!--FECHA CARGAR AUTOMATICA DESDE LOCAL-->
-            <input type="date" name="fecha"   [(ngModel)]="incidenciaForm.fecha" />
-          </div>
-        </div>
-        <!--comentarios-->
-        <div class="mb-3 mt-3">
-          <label for="comentario" class="form-label"
-            >Escribe la incidencia:</label
-          >
-          <textarea
-            name="descripcion"
-            id="comentario"
-            class="form-control"
-            rows="8"
-            cols="50"
-            [(ngModel)]="incidenciaForm.descripcion"
-          ></textarea>
+        <!--DIV - TIPO INCIDENCIA-->
+        <div class="p-1">Tipo:</div>
+        <div>
+          <select class="form-select" name="tipo" id="tipo" style="width: 200px" [(ngModel)]="incidenciaForm.tipo">
+            <option value=""></option>
+            <option value="Hardware">Hardware</option>
+            <option value="Softwares">Software</option>
+          </select>
         </div>
 
-        <div class="mb-3 mt-3">
-          <input
-            type="submit"
-            value="Enviar"
-            class="btn btn-outline-secondary"
-            (click)="recogerDatos(Formulario)"
-          />
+        <!--DIV - AULAS-->
+        <div class="p-1">Aula:</div>
+        <div>
+          <select class="form-select" name="aula" id="aula" style="width: 200px" [(ngModel)]="incidenciaForm.aula">
+            <option value=""></option>
+            <option value="B.1">B.1</option>
+            <option value="B.2">B.2</option>
+            <option value="B.3">B.3</option>
+            <option value="B.4">B.4</option>
+            <option value="B.5">B.5</option>
+            <option value="B.7">B.7</option>
+            <option value="B.9">B.9</option>
+            <option value="B.11">B.11</option>
+            <option value="B.13">B.13</option>
+            <option value="1.1">1.1</option>
+            <option value="1.2">1.2</option>
+            <option value="1.3">1.3</option>
+            <option value="1.3">1.3</option>
+            <option value="1.4">1.4</option>
+            <option value="1.5">1.5</option>
+            <option value="1.6">1.6</option>
+            <option value="1.7">1.7</option>
+            <option value="1.8">1.8</option>
+            <option value="1.9">1.9</option>
+            <option value="1.10">1.10</option>
+            <option value="1.11">1.11</option>
+            <option value="1.12">1.12</option>
+            <option value="1.13">1.13</option>
+            <option value="1.14">1.14</option>
+            <option value="1.15">1.15</option>
+            <option value="1.16">1.16</option>
+            <option value="1.17">1.17</option>
+            <option value="1.18">1.18</option>
+            <option value="1.19">1.19</option>
+            <option value="1.20">1.20</option>
+            <option value="1.21">1.21</option>
+            <option value="1.22">1.22</option>
+            <option value="1.23">1.23</option>
+            <option value="2.1">2.1</option>
+            <option value="2.2">2.2</option>
+            <option value="2.3">2.3</option>
+            <option value="2.4">2.4</option>
+            <option value="2.5">2.5</option>
+            <option value="2.6">2.6</option>
+            <option value="2.7">2.7</option>
+            <option value="2.8">2.8</option>
+            <option value="2.9">2.9</option>
+            <option value="2.11">2.11</option>
+            <option value="2.13">2.13</option>
+          </select>
         </div>
-      </form>
 
-      <p class="mt-10" *ngIf="incidenciaOK == 'false'">Error al crear la incidencia</p>  <!-- poner margen tiop -->
-    </div>
-  </body>
+        <!--DIV - GRUPO-->
+        <div class="p-1">Grupo:</div>
+        <div>
+          <select class="form-select" name="grupo" id="grupo" style="width: 200px" [(ngModel)]="incidenciaForm.grupo">
+            <option value=""></option>
+            <option value="1ºComercio Internacional Dual">1º Comercio Internacional Dual</option>
+            <option value="1ºCom">1º COM</option>
+            <option value="2ºCom">2º COM</option>
+            <option value="1ºComTarde">1º COM TARDE</option>
+            <option value="2ºComTarde">2º COM TARDE</option>
+            <option value="1ºFPB">1º FPB</option>
+            <option value="2ºFPB">2º FPB</option>
+            <option value="1ºCI">1º CI</option>
+            <option value="2ºCI">2º CI</option>
+            <option value="ComercioDistancia">Comercio Distancia</option>
+            <option value="1ºEI A">1º EI A</option>
+            <option value="1ºEI B">1º EI B</option>
+            <option value="2ºEI A">2º EI A</option>
+            <option value="2ºEI B">2º EI B</option>
+            <option value="1ºIS A">1º IS A</option>
+            <option value="1ºIS B">1º IS B</option>
+            <option value="2ºIS A">2º IS A</option>
+            <option value="2ºIS B">2º IS B</option>
+            <option value="1ºIS Tarde">1º IS Tarde</option>
+            <option value="2ºIS Tarde">2º IS Tarde</option>
+            <option value="1ºMC A">1º MC A</option>
+            <option value="1ºMC B">1º MC B</option>
+            <option value="2ºMC A">2º MC A</option>
+            <option value="2ºMC B">2º MC B</option>
+            <option value="1ºAPD">1º APD</option>
+            <option value="2ºAPD">2º APD</option>
+            <option value="1ºDAW">1º DAW</option>
+            <option value="2ºDAW">2º DAW</option>
+            <option value="1ºDAM">1º DAM</option>
+            <option value="2ºDAM">2º DAM</option>
+            <option value="1ºASIRDUAL">1º ASIR DUAL</option>
+            <option value="1ºSMR">1º SMR</option>
+            <option value="2ºSMR">2º SMR</option>
+            <option value="1ºFPB AF">1º FPB AF</option>
+            <option value="1ºGUIA">1º GUIA</option>
+            <option value="2ºGUIA">1º GUIA</option>
+            <option value="1ºAFD A">1º AFD A</option>
+            <option value="1ºAFD B">1º AFD B</option>
+            <option value="2ºAFD A">2º AFD A</option>
+            <option value="2ºAFD B">2º AFD B</option>
+            <option value="1ºAF">1º AF</option>
+            <option value="2ºAF">2º AF</option>
+            <option value="1ºAGM">1º AGM</option>
+            <option value="2ºAGM">1º AGM</option>
+            <option value="1ºASDI">1º ASDI</option>
+            <option value="1ºJARD">1º JARD</option>
+            <option value="2ºJARD">2º JARD</option>
+            <option value="ACEPELU">ACEPELU</option>
+            <option value="ACEMBE">ACE MBE</option>
+          </select>
+        </div>
+
+        <!--DIV - FECHA-->
+        <div>
+          Fecha:
+          <input type="date" name="fecha" [(ngModel)]="incidenciaForm.fecha" />
+        </div>
+      </div>
+
+      <!--DIV - INFORMACION SOBRE LA INCIDENCIA-->
+      <div class="mb-3 mt-3">
+        <label for="comentario" class="form-label">Escribe la incidencia:</label>
+        <textarea name="descripcion" id="comentario" class="form-control" rows="8" cols="50"
+          [(ngModel)]="incidenciaForm.descripcion"></textarea>
+      </div>
+
+      <!--DIV - BOTON CREAR LA INCIDENCIA-->
+      <div class="mb-3 mt-3">
+        <input type="submit" value="Enviar" class="btn btn-outline-secondary" (click)="recogerDatos(Formulario)" />
+      </div>
+    </form>
+
+    <!--MENSAJE DE ERROR-->
+    <p class="mt-4" *ngIf="incidenciaOK == 'false'">Error al crear la incidencia</p>
+  </div>
+</body>
+
 </html>

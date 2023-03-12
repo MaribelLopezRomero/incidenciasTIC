@@ -1,31 +1,46 @@
-<div class="container">
-  <div class="container p-5 my-3 bg-dark text-white">
-    <h1>Incidencias's CORS</h1>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>CORS - Login</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+
+<body>
+  <div class="container">
+    <div class="container p-5 my-3 bg-dark text-white">
+      <h1>Incidencias's CORS</h1>
+    </div>
+
+    <h1>Iniciar sesion</h1>
+
+    <!-- <pre>{{ Formulario.value | json }} </pre>  -->
+    <form action="" class="" #Formulario="ngForm" (ngSubmit)="obtenerUsuarios()">
+
+      <!-- DIV CORREO ELECTRONICO -->
+      <div class="form-group col-md-3">
+        <label for="">Correo Electronico</label>
+        <input type="email" name="email" placeholder="Correo electrónico" class="form-control"
+          [(ngModel)]="loginForm.email" required="" />
+      </div>
+
+      <!-- DIV CONTRASEÑA -->
+      <div class="form-group col-md-3">
+        <label for="">Contraseña</label>
+        <input type="password" name="password" placeholder="Contraseña" class="form-control"
+          [(ngModel)]="loginForm.password" required />
+      </div>
+
+      <!-- Mensaje de error, si email no existe -->
+      <p class="mt-4" *ngIf="usuarios[0] == 'no'">Usuario no registrado o contraseña no válida</p>
+
+      <!-- BOTON PARA LOGEARSE -->
+      <input class="btn btn-outline-secondary mt-4" type="submit" value="Login" (click)="login(Formulario)"
+        [routerLink]="['/incidenciasUsuarioListar', usuarios[0].codUsu]" />
+
+    </form>
+
   </div>
-
-  <h1>Iniciar sesion</h1>
-
-  <!-- <pre>{{ Formulario.value | json }} </pre>  -->
-  <form action="" class="" #Formulario="ngForm" (ngSubmit)="obtenerUsuarios()">
-    <div class="form-group col-md-3">
-      <label for="">Correo Electronico</label>
-      <input type="email" name="email" placeholder="Email" class="form-control" [(ngModel)]="loginForm.email"
-        required="" />
-    </div>
-
-    <div class="form-group col-md-3">
-      <label for="">Contraseña</label>
-      <input type="password" name="password" placeholder="Contaseña" class="form-control"
-        [(ngModel)]="loginForm.password" required />
-    </div>
-
-    <p class="mt-4" *ngIf="usuarios[0] == 'no'">Usuario no registrado o contraseña no válida</p>
-    <!-- poner margen tiop -->
-
-
-    <input class="btn btn-secondary mt-4" type="submit" value="Login" (click)="login(Formulario)"
-      [routerLink]="['/incidenciasUsuarioListar', usuarios[0].codUsu]" />
-
-  </form>
-
-</div>
+</body>
+</html>

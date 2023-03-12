@@ -1,50 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Actualizar incidencia</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-  </head>
-  <body>
-    <div class="container p-5 my-3 bg-dark text-white">
-      <h2>Incidencias TIC</h2>
-    </div>
-    <div class="container mt-3">
-      <h2>Incidencias Ind1234569</h2>           <!--RECOGER EL CODIGO DE LA INCIDENCIA DE LA BBDD-->
-      <form action="./gestionarIncidencia.html" method="post"  #Formulario="ngForm" (ngSubmit)="modificarIncidencia()">
-        <div class="mb-3 d-flex selectores">
-          <div class="p-1">Estado:</div>
-          <div>
-            <select class="form-select" name="estado" id="estado" style="width: 200px" [(ngModel)]="incidenciaModificarForm.estado">
-              <option value="En Proceso" selected></option>
-              <option value="Terminada">Terminada</option>
-              <option value="En Proceso">En Proceso</option>
-            </select>
-          </div>
+
+<head>
+  <title>CORS - Solucionar incidencia</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+
+<body>
+  <div class="container p-5 my-3 bg-dark text-white">
+    <h1>Incidencias's CORS</h1>
+    <h3>Solucionar incidencias</h3>
+  </div>
+  <div class="container mt-3">
+
+    <!--RECOGER EL CODIGO DE LA INCIDENCIA DE LA BBDD-->
+    <h2>Incidencias XXXXXX </h2>
+
+    <form action="./gestionarIncidencia.html" method="post" #Formulario="ngForm" (ngSubmit)="modificarIncidencia()">
+      <!--DIV - DATOS INCIDENCIA-->
+
+      <div class="mb-3 d-flex selectores">
+        <!--DIV - DESPLEGABLE ESTADO-->
+        <div class="p-1">Estado:</div>
+        <div>
+          <select class="form-select" name="estado" id="estado" style="width: 200px"
+            [(ngModel)]="incidenciaModificarForm.estado">
+            <option value="En Proceso" selected></option>
+            <option value="Terminada">Terminada</option>
+            <option value="En Proceso">En Proceso</option>
+          </select>
         </div>
-        <!--Feedback-->
-        <div class="mb-3 mt-3">
-          <label for="comentario" class="form-label"
-            >Feedback:</label
-          >
-          <textarea
-            name="feedback"
-            id="feedback"
-            class="form-control"
-            rows="8"
-            cols="50"
-            [(ngModel)]="incidenciaModificarForm.feedback"
-          ></textarea>
-        </div>
+      </div>
 
-        <div class="mb-3 mt-3 d-flex justify-content-center">
-            <input type="submit" id="buttonStatus" value="Enviar" class="btn btn-outline-secondary"  (click)="recogerDatos(Formulario)"/>
-            <input value="Cancelar" id="buttonStatus" class="btn btn-outline-danger"/>
-          </div>
+      <!--DIV - FEEDBACK DE LA INCIDENCIA-->
+      <div class="mb-3 mt-3">
+        <label for="comentario" class="form-label">Feedback:</label>
+        <textarea name="feedback" id="feedback" class="form-control" rows="8" cols="50"
+          [(ngModel)]="incidenciaModificarForm.feedback"></textarea>
+      </div>
 
-      </form>
+      <!--DIV - BOTON CREAR o CANCELAR LA GESTION DE LA INCIDENCIA-->
+      <div class="mb-3 mt-3 d-flex justify-content-center">
+        <input type="submit" id="buttonStatus" value="Enviar" class="btn btn-outline-secondary"
+          (click)="recogerDatos(Formulario)" style="margin-right: 20px;" />
+        <input value="Cancelar" id="buttonStatus" class="btn btn-outline-danger" />
+      </div>
+    </form>
 
-      <p class="mt-10" *ngIf="incidenciaOK == 'false'">Error al crear la incidencia</p>  <!-- poner margen tiop -->
-    </div>
-  </body>
+    <!--MENSAJE DE ERROR-->
+    <p class="mt-4" *ngIf="incidenciaOK == 'false'">Error al crear la incidencia</p>
+  </div>
+</body>
+
 </html>

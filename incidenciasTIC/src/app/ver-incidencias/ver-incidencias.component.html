@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Bootstrap Example</title>
+  <title>CORS - Ver incidencias</title>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 </head>
@@ -10,6 +10,7 @@
 <body>
   <div class="container p-5 my-3 bg-dark text-white">
     <h1>Incidencias's CORS</h1>
+    <h3>Ver incidencias</h3>
     <ul class="nav">
       <li class="nav-item">
         <a class="nav-link text-white" disabled>Ver incidencias</a>
@@ -24,13 +25,14 @@
     <table class="table">
       <thead>
         <tr>
-          <th>Fecha creación</th>
-          <th>Código incidencia</th>
+          <th>Fecha</th>
+          <th>Nº incidencia</th>
           <th>Tipo</th>
           <th>Aula</th>
           <th>Grupo</th>
           <th>Descripcion</th>
           <th>Estado</th>
+          <th>Feedback</th>
         </tr>
       </thead>
       <tbody>
@@ -53,6 +55,10 @@
           <td>
             {{ incidencia.descripcion }}
           </td>
+          <!-- ESTO HAY QUE TOCARLO, QUE SI HAY FEEDBACK SE VEA EL FEEDBACK, Y SINO QUE ESTE VACIO -->
+          <!-- <td>
+            {{ incidencia.feedback }}
+          </td> -->
           <td>
             <button type="button" id="buttonStatus" name="button" [ngClass]="incidencia.estado=== 'Creada' ? 'btn btn-success' : incidencia.estado === 'En Proceso' ? 'btn btn-warning' : 'btn btn-danger'">
               {{ incidencia.estado}}
