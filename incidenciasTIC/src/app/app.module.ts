@@ -11,9 +11,13 @@ import { CrearIncidenciaComponent } from './crear-incidencia/crear-incidencia.co
 import { GestionarIncidenciaAdmComponent } from './gestionar-incidencia-adm/gestionar-incidencia-adm.component';
 import { VerIncidenciasComponent } from './ver-incidencias/ver-incidencias.component';
 import { ModIncidenciasAdmComponent } from './mod-incidencias-adm/mod-incidencias-adm.component';
+import { CrearUsuarioComponent } from './crear-usuario/crear-usuario.component';
+import { HomeComponent } from './home/home.component';
 
 const appRoutes:Routes=[
-  {path:"", component:LoginComponent},
+  {path:"", component:HomeComponent},
+  {path:"home", component:HomeComponent},
+  {path:"registrarse", component:CrearUsuarioComponent},
   {path:"login", component:LoginComponent},
   {path:"incidenciasUsuarioListar/:codUsu", component:VerIncidenciasComponent},
   {path:"incidenciasUsuarioCrear/:codUsu", component:CrearIncidenciaComponent},
@@ -28,7 +32,9 @@ const appRoutes:Routes=[
     CrearIncidenciaComponent,
     GestionarIncidenciaAdmComponent,
     VerIncidenciasComponent,
-    ModIncidenciasAdmComponent
+    ModIncidenciasAdmComponent,
+    CrearUsuarioComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
